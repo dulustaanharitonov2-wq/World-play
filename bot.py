@@ -17,17 +17,9 @@ async def on_message(message):
     # Prevent the bot from replying to itself
     if message.author == bot.user:
         return
-
-    # Respond to a specific message
-    if message.content == 'Hello bot!':
-        await message.channel.send('Hello! How can I help you today?')
-
+    
     # Allow commands to be processed
     await bot.process_commands(message)
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('Pong!')
 
 # Run the bot
 bot.run(TOKEN)
